@@ -38,6 +38,7 @@ try:
     La_metamorfosis = libro ('001S', 'La metamorfosis', 47000, 'Gregor Samsa se despierta una mañana y descubre que se ha transformado en un insecto gigante', 'Franz Kafka', '978-8437608427')
     El_extranjero = libro ('001T', 'El extranjero', 49000, 'La historia de Meursault, un hombre indiferente ante la vida y la muerte', 'Albert Camus', '978-8420674208')
     El_principito = libro ('001T', 'El Principito', 35000, 'Una narración poética sobre la amistad y la búsqueda de sentido en la vida', 'Antoine de Saint-Exupéry', '978-0307476121')
+   
 except TypeError:
     print("""
 Recuerda dijitar todos los datos necesarios, ejemplo:,\n
@@ -47,8 +48,12 @@ valor: \t\t\t50000
 Descripcion \t\ttestamento sobre la existencia de Dios
 Autor: \t\t\tMoises_Desconocido
 ISBN: \t\t\tCodigo que tiene el libro
-""")    
-    
+""")   
+#lista de todos los libros disponibles 
+libros= [Biblia, Odisea, La_prehistoria, Abezooocéano,El_Resplandor,Doctor_sueño,Moby_Dick,Los_miserables,La_iliada,
+        El_padrino,La_divina_comedia,Anna_Karenina,El_retorno_del_rey, La_metamorfosis,El_extranjero,El_principito]
+
+
 print("""\nBuenas tardes Usuario ha entrado en la base de datos de la biblioteca
       
 Para añadir al invetario de la biblioteca un libro que alquilo solo ponga los siguientes datos en el codigo:
@@ -59,19 +64,20 @@ while True:
         print("""
 Se encuentra en el MENU:
 1)Si quiere ver los libros en la biblioteca oprima el numero 1
-2)Quiere ver los generos que hay? oprima 2
+2)Quiere buscar un libro en la base, oprima 2
 3)Si quiere salir del programa """)
         respuesta = int(input('Seleccione: '))
         if respuesta == 1:
-            lista = [Biblia, Odisea, La_prehistoria, Abezooocéano,El_Resplandor,Doctor_sueño,Moby_Dick,Los_miserables,La_iliada,El_padrino,La_divina_comedia,Anna_Karenina,El_retorno_del_rey, La_metamorfosis.El_extranjero.El_principito]
-            for l in lista:
+            for l in libros:
                 print (l, '\n')
         elif respuesta == 2:
-            pass 
+            busqueda_libro=input('Que libro quiere buscar?')
+            if busqueda_libro in libros:
+                print('Aun no tenemos la funcion disponible, intentelo despues')
+                
         elif respuesta == 3:
             print('Esta saliendo del programa....')
             break
     except ValueError:
         print('La opcion que intenta dar es erronea')
     #ValueError
-    
